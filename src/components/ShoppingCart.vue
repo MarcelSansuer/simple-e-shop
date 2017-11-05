@@ -10,7 +10,7 @@
             &times;
           </button>
         </div>
-        <div class="modal-body text-right">
+        <div class="modal-body ">
           <!--Shopping cart items will go here.-->
           <table class="table">
           <tbody>
@@ -19,6 +19,9 @@
               <td>{{ item.price | dollars }}</td>
               <td>
                 <button class="btn btn-sm btn-danger" @click="removeFromCart(index)">&times;</button>
+              </td>
+              <td>
+                <button class="btn btn-sm btn-success" @click="addToCart(item.invId)">&#43;</button>
               </td>
             </tr>
             <tr>
@@ -46,7 +49,10 @@ export default {
   methods:{
     removeFromCart(index){
       this.$store.dispatch('removeFromCart', index);
-    }
+    },
+    addToCart(invId) {
+      this.$store.dispatch('addToCart', invId);
+    },
   },
   computed: {
     inCart() { return this.$store.getters.inCart; },
@@ -66,3 +72,8 @@ export default {
 
 };
 </script>
+<style media="screen">
+td {
+  width: 100%;
+}
+</style>

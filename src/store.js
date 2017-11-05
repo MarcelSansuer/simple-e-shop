@@ -10,10 +10,10 @@ export default new Vuex.Store({
     we can use axios oder another tool to load files (json or another) form server...
     */
     forSale: [
-      { invId: 1, name: 'An Item', image: '//placehold.it/200', price: 999 },
-      { invId: 2, name: 'Thing', image: '//placehold.it/200', price: 1499 },
-      { invId: 3, name: 'Doo-dad', image: '//placehold.it/200', price: 499 },
-      { invId: 4, name: 'Other thing', image: '//placehold.it/200', price: 299 },
+      { invId: 1, name: 'PokéBall', image: '//placehold.it/200', price: 4711 },
+      { invId: 2, name: 'Cap', image: '//placehold.it/200', price: 200 },
+      { invId: 3, name: 'Hyper Potion', image: '//placehold.it/200', price: 1000 },
+      { invId: 4, name: 'Moomoo Milk', image: '//placehold.it/200', price: 500 },
     ],
     inCart: [],
   },
