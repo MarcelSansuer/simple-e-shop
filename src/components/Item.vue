@@ -5,6 +5,7 @@
       <div class="card-body">
         <h4 class="card-title">{{ name }}</h4>
         <div class="card-text">{{ price | dollars }}</div>
+        <div class="card-text">{{ count }}</div>
         <div class="row justify-content-end">
           <button class="btn btn-primary" @click="addToCart(invId)">Add to cart</button>
         </div>
@@ -19,10 +20,11 @@ import filters from './filters';
 
 export default {
   name: 'item',
-  props: ['invId', 'name', 'image', 'price'],
+  props: ['invId', 'name', 'image', 'price', 'count'],
   methods: {
     addToCart(invId) {
       this.$store.dispatch('addToCart', invId);
+      this.$store.dispatch('decCountItem', invId);
     },
   },
   filters,

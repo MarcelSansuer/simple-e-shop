@@ -17,7 +17,8 @@
             :invId="item.invId"
             :name="item.name"
             :image="item.image"
-            :price="item.price" />
+            :price="item.price"
+            :count="item.count" />
     </div>
   </div>
 </template>

@@ -52,6 +52,7 @@ export default {
     },
     addToCart(invId) {
       this.$store.dispatch('addToCart', invId);
+      this.$store.dispatch('decCountItem', invId);
     },
   },
   computed: {
