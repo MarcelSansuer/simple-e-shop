@@ -15,4 +15,9 @@ npm run dev
 npm run build
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+For detailed explanation on how things work, consult the
+
+- [docs for vue-loader](http://vuejs.github.io/vue-loader),
+- [vue Lifecycle Hooks](https://vuejs.org/v2/guide/instance.html).
+
+![Alt text](./lifecycle.png?raw=true "Optional Title")
