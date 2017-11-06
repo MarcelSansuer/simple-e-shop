@@ -18,7 +18,7 @@
               <td>{{ item.name }}</td>
               <td>{{ item.price | dollars }}</td>
               <td>
-                <button class="btn btn-sm btn-danger" @click="removeFromCart(index)">&times;</button>
+                <button class="btn btn-sm btn-danger" @click="removeFromCart(index, item.invId)">&times;</button>
               </td>
               <td>
                 <button class="btn btn-sm btn-success" @click="addToCart(item.invId)">&#43;</button>
@@ -47,8 +47,9 @@ import filters from './filters';
 export default {
   name: 'shoppingCart',
   methods:{
-    removeFromCart(index){
+    removeFromCart(index, invId){
       this.$store.dispatch('removeFromCart', index);
+      this.$store.dispatch('incCountItem', invId);
     },
     addToCart(invId) {
       this.$store.dispatch('addToCart', invId);

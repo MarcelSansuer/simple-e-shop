@@ -32,17 +32,31 @@ export default new Vuex.Store({
          }
        })
      },
-
+     INC_COUNT_OF_ITEM(state, invId){
+       state.forSale.forEach(function(obj){
+         if(obj.invId === invId){
+          console.log('des');
+          obj.count = obj.count +1 ;
+         }
+       })
+     },
+//TODO: add increase functionality
+//TODO: check of minus null and add error function.
   },
   actions: {
     removeFromCart(context, index){
       context.commit('REMOVE_FROM_CART', index);
     },
+    incCountItem(context, invId){
+      context.commit('INC_COUNT_OF_ITEM', invId);
+    },
+
     addToCart(context, invId) {
       context.commit('ADD_TO_CART', invId);
     },
     decCountItem(context, invId){
       context.commit('DEC_COUNT_OF_ITEM', invId);
     },
+
   },
 });
