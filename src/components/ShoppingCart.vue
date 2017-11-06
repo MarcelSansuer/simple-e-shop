@@ -21,7 +21,12 @@
                 <button class="btn btn-sm btn-danger" @click="removeFromCart(index, item.invId)">&times;</button>
               </td>
               <td>
-                <button class="btn btn-sm btn-success" @click="addToCart(item.invId)">&#43;</button>
+                <div v-if="item.count > 0">
+                  <button class="btn btn-sm btn-success" @click="addToCart(item.invId, item.count)">&#43;</button>
+                </div>
+                <div v-else>
+                  <button class="btn btn-sm btn-success disabled" @click="addToCart(item.invId, item.count)">&#43;</button>
+                </div>
               </td>
             </tr>
             <tr>
@@ -51,9 +56,11 @@ export default {
       this.$store.dispatch('removeFromCart', index);
       this.$store.dispatch('incCountItem', invId);
     },
-    addToCart(invId) {
-      this.$store.dispatch('addToCart', invId);
-      this.$store.dispatch('decCountItem', invId);
+    addToCart(invId, count) {
+      if(count > 0){
+        this.$store.dispatch('addToCart', invId);
+        this.$store.dispatch('decCountItem', invId);
+      }
     },
   },
   computed: {

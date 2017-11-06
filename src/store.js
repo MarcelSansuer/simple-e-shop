@@ -6,8 +6,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     /*
-    for example i use the following dummy data.
-    we can use axios oder another tool to load files (json or another) form server...
+    for example the following dummy data.
+    alternative you can use other tools to get data from the server (axios).
     */
     forSale: [
       { invId: 1, name: 'PokéBall', image: '//placehold.it/200', price: 4711, count: 5 },
@@ -27,7 +27,6 @@ export default new Vuex.Store({
      DEC_COUNT_OF_ITEM(state, invId){
        state.forSale.forEach(function(obj){
          if(obj.invId === invId){
-          console.log('des');
           obj.count = obj.count -1 ;
          }
        })
@@ -35,22 +34,21 @@ export default new Vuex.Store({
      INC_COUNT_OF_ITEM(state, invId){
        state.forSale.forEach(function(obj){
          if(obj.invId === invId){
-          console.log('des');
           obj.count = obj.count +1 ;
          }
        })
      },
-//TODO: add increase functionality
-//TODO: check of minus null and add error function.
+
   },
   actions: {
+    //remove items
     removeFromCart(context, index){
       context.commit('REMOVE_FROM_CART', index);
     },
     incCountItem(context, invId){
       context.commit('INC_COUNT_OF_ITEM', invId);
     },
-
+    //add items
     addToCart(context, invId) {
       context.commit('ADD_TO_CART', invId);
     },
