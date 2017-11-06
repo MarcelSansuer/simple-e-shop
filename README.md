@@ -17,6 +17,7 @@ npm run build
 
 For detailed explanation on how things work, consult the
 
+- [vue.js docs](https://vuejs.org/),
 - [docs for vue-loader](http://vuejs.github.io/vue-loader),
 - [vue Lifecycle Hooks](https://vuejs.org/v2/guide/instance.html).
 
